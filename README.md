@@ -70,6 +70,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 # Basic Concepts
 
 ## React
+- Create react app
+- Babel
 - Class based components
 - Functional components
 - States
@@ -121,8 +123,42 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## JWTs
 
 ## JSON Server
+### <b>Installation:</b>
+
+To install, go in any project folder or install it globally using `-g` like
+
+### `npm install -g json-server`
+
+To run, execute command
+
+### `json-server --watch db.json --port 3001`
+
+where `db.json` can have static json
 
 ## Express Server
+- ### <b>Installation</b>
+    Can install in any empty directory. Just cd into a folder and create a new dir, we'll create `pes-app`
+		  
+        mkdir pes-app
+			  
+    cd to `pes-app` and execute
+
+		npm init --yes
+    
+    This will create `pcakage.json` in this folder i.e. `pes-app`. Then, create server.js file in root dir of `pes-app`.
+    We can install (optional) `nodemon` to terminate and restart the server i.e. server.js after each change. We can execute command:
+		
+        npm i -g nodemon
+    
+    After installing, we can start it by executing:
+
+		nodemon server.js
+			  
+    For setting environment var PORT and using in server.js, execute:
+
+        set PORT=3006
+			  
+    Use server.js for HTTP requests i.e. GET, POST. For validation use joi library
 
 ## Sockets
 - sockets.io
