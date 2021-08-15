@@ -17,6 +17,26 @@ const initState = {
             name: 'Luis Suarez',
             bio:'Uraguay nationale - current barcelona striker - not enough data :('
         },
+        {
+            id: '4',
+            name: 'Ronaldo',
+            bio: 'Poruguese footballer - euro cup winner, - former madrista - 5 ballon d`ors'
+        },
+        {
+            id: '5',
+            name: 'Messi',
+            bio: 'Argentinian footaller - current barca player - 5 ballon d`ors'
+        },
+        {
+            id: '6',
+            name: 'Bale',
+            bio: 'Wales nationale - current madrid striker - not enough data :('
+        },
+        {
+            id: '7',
+            name: 'Ozil',
+            bio: 'Argentinian nationale - not enough data :('
+        },
     ],
     reg_users: [
         {
