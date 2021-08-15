@@ -71,13 +71,37 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## React
 - Create react app
+  - ### <b>Installation:</b>
+    Create a new directory for project, we'll name it `pes-app` and `cd` to it. Then execute:
+
+        npx create-react-app pes_app
+
+    Then if dependencies are defined after this, or in an existence project, to install the dev dependencies defined in the `package.json` file, run:
+
+        npm install
+
+    Then, we can run the app by executing:
+
+        npm start
+
+- Webpack
 - Babel
+
+  Converts ES6 to browser understandable vanilla script
+
+- VDOM
 - Class based components
 - Functional components
+- Pure components
+- HOCs
 - States
 - Props
 - Lifecycle methods in classes
 - Lifecycle hooks in functional components
+- Child to parent props
+
+  Use of callback methods passed as a prop to the children. When called in the child, returns control to the parent as a callback and can also get data in the params
+
 - Hooks
   - useState
   - useEffect
@@ -97,9 +121,31 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Protected routes
 - Service worker
 - Redux persist/localstorage
+- Mutable/Immutable
 
 ## Javascript
+- Classes
+- Functions
+- Inheritence (`extends`)
+
+  Inherits properties/functions from its parent class
+
+- Interfaces (`has`)
+
+  Defines a shape objects/classes can take
+
+- Abstraction
+- JS methods
+  - forEach
+  - map
+  - shift
+  - unshift
+  - splice
+  - reduce
 - lodash
+
+
+## Middlewares
 
 ## APIs
 - CRUD
