@@ -63,3 +63,66 @@ The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+
+</br>
+
+# Basic Concepts
+
+## React
+- Class based components
+- Functional components
+- States
+- Props
+- Lifecycle methods in classes
+- Lifecycle hooks in functional components
+- Hooks
+  - useState
+  - useEffect
+  - useContext
+  - useRef
+  - useCallback
+  - useReducer
+  - useMemo
+  - useImperativeHandle
+  - useLayoutEffect
+  - useDebugValue
+- Redux state management
+  - Actions types
+  - Actions
+  - Reducers
+- React router
+- Protected routes
+- Service worker
+- Redux persist/localstorage
+
+## Javascript
+- lodash
+
+## APIs
+- CRUD
+- Axios
+- REST Arch & RestFul APIs
+
+## Design Libraries
+- Material UI
+- ANTd
+
+## Linting
+- ESLint
+
+## SAAS
+- SCSS
+
+## Test Cases
+- JEST
+- Enzymes
+
+## JWTs
+
+## JSON Server
+
+## Express Server
+
+## Sockets
+- sockets.io
