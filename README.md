@@ -34,11 +34,11 @@ Setup:
 
 In the project directory, you can run:
 
-### `npm install`
+    npm install
 
 This will install all the dev dependencies defined in the `package.json` file. Then run:
 
-`npm start`
+    npm start
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -48,13 +48,13 @@ The page will reload if you make edits. You will also see any lint errors in the
 <br>
 To launch the test runner in the interactive watch mode, use:
 
-### `npm test`
+    npm test
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 <br>
 To build the app for production, use:
 
-### `npm run build`
+    npm run build
 It builds the app for production to the `build` folder and correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.
@@ -169,17 +169,17 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## JWTs
 
 ## JSON Server
-### <b>Installation:</b>
+ - ### <b>Installation:</b>
 
-To install, go in any project folder or install it globally using `-g` like
+    To install, go in any project folder or install it globally using `-g` like
 
-### `npm install -g json-server`
+        npm install -g json-server
 
-To run, execute command
+    To run, execute command
 
-### `json-server --watch db.json --port 3001`
+        json-server --watch db.json --port 3001
 
-where `db.json` can have static json
+    where `db.json` can have static json
 
 ## Express Server
 - ### <b>Installation</b>
