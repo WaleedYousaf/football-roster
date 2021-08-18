@@ -26,7 +26,7 @@ A PES Auction ReactJS app focuses on the core concepts ReactJS and uses Google's
   - <b>Materialize</b> - Modern and Responsive Design Framework
 - Tools:
   - <b>Websotorm</b> - IDE (others can also be used like VS Code, Atom, etc)
-  - <b>GitBash</b> - Version Control
+  - <b>GitBash</b> - Version Control (emulation layer for Git command line interface on windows)
   - <b>Chrome</b> - Web Browser (others can also be used like Chrome, Safari, Firefox)
 
 Setup:
