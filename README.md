@@ -200,10 +200,188 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Linting
 - ESLint
 
-## CSS/SAAS
-- SCSS
+## CSS/SASS
+- CSS
+  - Pseudo classes
+- SASS
 
-  Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets
+  Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
+  Its an extension to CSS. It allows us to use variables, functions
+  conditions. Its written in ruby.
+  
+  - Using variables:
+
+        $myFavColor: #323232;
+
+        .myClass {
+          color: $myFavColor;
+        }
+
+  - Nested Styles:
+
+        #myRootWrapper {
+          width: 100%;
+
+          .myClass {
+            color: $myFavColor;
+          }
+
+          ul {
+            background: $myFavColor;
+          }
+        }
+
+    this is equal to following in CSS
+
+        #myRootWrapper {
+          width: 100%;
+        } 
+
+        #myRootWrapper .myClass {
+          color: $myFavColor;
+        }
+
+        #myRootWrapper ul {
+          background: $myFavColor;
+        }
+  
+  - mixin
+
+    Mixins are basically a reusable chunk of css/sass which we can
+    inject in different elements. They allow us to write reusable
+    styles. We can pass variables as well to intanciate them at run 
+    time like
+
+        @mixin important-text {
+          color: red;
+          font-size: 25px;
+          font-weight: bold;
+          border: 1px solid blue;
+        }
+        
+        .danger {
+          @include important-text;
+          background-color: green;
+        }
+
+    Simple mixins:
+
+          @mixin myMixin {
+            width: 100%;
+            color: $myFavColor;
+
+            .myClass {
+              padding: 8px;
+            }
+
+            // `title` class inside span
+            span.title {
+              font-weight: bold;
+            }
+          }
+
+    Now using this mixin
+
+        #myRootWrapper {
+          @include myMixin
+        }
+
+  - importing other external SASS
+
+    We can create separate files for vars, mixins and separate styles
+    files. Import order matters
+
+        @import "./myVars";
+    
+    And thats it, now we can use mixins and vars from other styles
+
+  - Pseudo classes
+
+        #myRootWrapper {
+          width: 100%;
+
+          &:hover {
+            background: #323232;
+          }
+        }
+        
+  - Math Operators
+
+    Can use, addition, subtraction, multiplication, division
+
+        li {
+          width: (14px * 2);
+        }
+
+        div {
+          width: (100% / 6);
+        }
+
+  - Mixin functions
+
+        @mixin myMixin($cols, $mgns) {
+          float: right;
+          margins: $mgns;
+          width: ((100% - (($cols - 1) * $mgns)) / $cols); 
+          &:nth-child(${cols}n) {
+            margin-right: 0;
+          }
+        }
+
+        .myClass {
+          @include myMixin(4, 2%);
+        }
+
+  - Colour Functions
+
+    SASS provides tons of functions for us to use, can [visit this link](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2xtQU1qTFJrWnFaZmtDUC0wR3ZVZnZITjM1QXxBQ3Jtc0trRDNhZS1yX3JBa2M4bDBsaFcwUUVoelBoOW9laXVCdjhCUnNxU0wzWml2VDNjb2VDQ2pQSGx4TnNUenNwWWhlY1FFeWxka0dxcXJkZUVvRDk4ZVlSbDFTS0xBb09WTTN2RUxieklZeXpVdF9Rc0JYTQ&q=http%3A%2F%2Fsass-lang.com%2Fdocumentation%2FSass%2FScript%2FFunctions.html) 
+    for details
+
+        .myClass {
+          background: lighten($myFavColor, 5); // 2nd param defines the intensity
+
+          &:hover {
+            color: complement($myFavColur);
+          }
+        }
+
+  - Content Keyword
+
+    It search and puts the style where it finds the context keyword
+
+        @mixin mediaQuery($arg) {
+          @media screen and (max-width: $arg) {
+             @content; // children when mixin called will get here
+          }
+        }
+
+        li {
+          @includes mediaQuery(600px) {
+            width: 100%
+          }
+        }
+
+  - If statements
+
+        @mixin mediaQuery($arg...) { // when number of args is not specified
+          @if length($args) == 1 {
+            @media screen and (max-width: nth($arg, 1)) {
+             @content; // children when mixin called will get here
+            }
+          }
+          @if length($args) == 2 {
+            @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+             @content; // children when mixin called will get here
+            }
+          }
+        }
+
+        li {
+          @includes mediaQuery(600px, 100px) {
+            width: 100%
+          }
+        }
+
 
 - Media queries
 
@@ -245,22 +423,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
         .col-11 {width: 91.66%;}
         .col-12 {width: 100%;}
       } 
-
-- mixin
-  
-  They allow us to write reusable styles. We can pass variables as well to intanciate them at run time like
-
-      @mixin important-text {
-        color: red;
-        font-size: 25px;
-        font-weight: bold;
-        border: 1px solid blue;
-      }
-      
-      .danger {
-        @include important-text;
-        background-color: green;
-      }
 
 ## Test Cases
 - JEST
