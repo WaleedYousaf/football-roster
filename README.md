@@ -142,6 +142,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   - unshift
   - splice
   - reduce
+    
+    Takes 2 arguments, the first one is a callback method, which further takes
+    two arguments where first one is the `total` or `accumalator` and second 
+    one is the `current` of this iteration, where and second parameter of reduce
+    is the initial value of accumalator. It returns a single value
+
+        const myReducedArray = myArray.reduce((total, item) => total + (item.num1 + item.num2), 0) 
 - lodash
 
 
