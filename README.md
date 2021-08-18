@@ -94,6 +94,36 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Functional components
 - Pure components
 - HOCs
+
+  Its a function that either takes a function as a parameter or returns a function
+
+   - Function accepting a function
+
+          document.addEventListener("click", () => myFunction());
+  - Function returning a function
+
+          const createMultiplier = (multiplier) => {
+            return (x) => {
+              return x * multiplier
+            }
+          };
+
+          // OR
+
+          const createMultiplier = (multiplier) => (x) => x * multiplier;
+
+          let doubleMe = createMultiplier(2);
+          let tripleMe = createMultiplier(3);
+      In JS, functions are considered as first class citizens like numbers, 
+      strings and we can assign a variable or a const a function. We can pass
+      them as a param and can return them from functions
+  - Popular HOCs
+      
+      - forEach()
+      - map()
+      - filter()
+      - reduce()
+      - sort()
 - States
 - Props
 - Lifecycle methods in classes
