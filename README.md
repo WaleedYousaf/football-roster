@@ -219,6 +219,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - Hash Tables
 
+  A hash table is used to implement associative arrays of mapping of key value pairs. Its a common way to implement mao data structure or objects. Widely used cuz of efficiency. 
+  
+  The average time to lookup is not tied to the number of elements stored in the table.
+  
+  The avg time complexity in big `O` notation is O(1) for search, insert or delete (worst is O(n))
+
+  It works by taking a key input and then runs it through the hash function which maps strings to numbers and usually numbers corresponds to indexes in an array
+
 ## Algos
 
 ## Javascript
