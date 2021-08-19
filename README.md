@@ -187,7 +187,23 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
    - subset -> if the first set is completly contained within another set. Uses `every` 
 
 - Linked list
+
+  A data structure where elements are stored in a node. The node contains 2 key pieces of information, the element itself and the reference to the next node.
+
+  Some advantages and disadvantages over arrays are
+    
+    Array/LinkedList
+
+    - Fixed size/dynamic size (although JS hides this in array)
+    - Inefficient insertions-deletions/efficient insertions-deletions
+    - Random access(effiecient indexing)/no random access
+    - Memory wastage/no memory wastage cuz dynamic size
+    - Sequential access is faster (elements in contagious mem locations)/sequential access is slower
+
+  Every linked list has a `head`  pointer and a size. Last node points to null
+
 - Circular queue
+- Trie
 
 - Binary Search Tree
 
@@ -225,7 +241,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   
   The avg time complexity in big `O` notation is O(1) for search, insert or delete (worst is O(n))
 
-  It works by taking a key input and then runs it through the hash function which maps strings to numbers and usually numbers corresponds to indexes in an array
+  It works by taking a key input and then runs it through the hash function which maps strings to numbers and 
+  usually numbers corresponds to indexes in an array. All the keys should map to different numbers, cant have same keys/numbers. If two words get hashed to same number, its called collision
 
 ## Algos
 
