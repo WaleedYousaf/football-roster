@@ -191,6 +191,34 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - Binary Search Tree
 
+  Tree structure has the entries which are `nodes`. The top one is `root`. Have `parent children siblings`. The node which doesnt have any children are `leafNodes`
+
+  In a binary tree however, each node can only have 2 children/branches. They are ordered. Each left sub-tree
+  is less than or equal to parent node and each right sub-tree is greater than or equal to the parent node.
+
+  When they use binary search, an average operation can skip about half of the tree so each look-up, insertion 
+  or deletion takes time proportional to the logrithm of the number of items stored in a tree. Can use recursion to implement BST. 
+
+  - Height
+
+  Height is the distance from the root to any leaf node. Level of nesting represents the height. The root has a 
+  height 0, and so on. Different paths in a same tree can have different heights. 
+  
+  Each tree will have a minimum and a maximum height. If the tree is balanced, these values will differ at most by 1.
+
+  Searching through a balanced tree is much more efficient
+
+  - Traversal
+    
+    Ways to travers a tree
+
+      - in-order -> begin at the left most node and end at the right most node. Like left, then parent, then parent's left child, then parent, then parent's right child if any and so on. Go in order left, root, right
+      - pre-order -> we explore the root nodes before the leaves. First root node, then traverse left side's first root, then its root, and go in order root, left, right 
+      - post-order -> explores the leaf nodes before the roots. So left most leaf, then its right left most leaf, then its right leaf then root and finish one side/branch of the tree.
+      - level-order -> is also called breath first search. It explores all the nodes on one level of the tree before moving on to the next level. For each level from top to bottom, follow left to right. 
+
+- Hash Tables
+
 ## Algos
 
 ## Javascript
