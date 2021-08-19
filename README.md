@@ -126,7 +126,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Data Structures
 - Stack
 
-  It follows the LIFO. In js, array can be used cuz it supports stack
+  It follows the LIFO. In js, array can be used cuz it supports stack. Example can be `git stash`
   functions like 
     
     - push() -> adds one item at the top
@@ -150,6 +150,25 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
           reversed += myStack.pop();
         }
 - Queue
+
+  Its kind of an array follows FIFO.
+
+  - print -> prints or logs collectio
+  - enqueue -> push an item
+  - dequeue -> pop an item but the first one so uses `shift`
+  - front -> return the item at the front (0th index)  w/o removing it
+  - size -> returns length
+  - isEmpty -> returns true if no items
+
+- Priority Queue
+
+  Along with enqueuing an item, we can send a priority, if no priority is passed, it behaves like normal queue
+
+      var pq = new PriorityQueue();
+      pq.enqueue(['ronaldo', 5]);
+      pq.enqueue(['neymar', 3]);
+      pq.enqueue(['bale', 3]);
+
 - Set
 
    Its kind of an array except no duplicate items and the values
@@ -170,6 +189,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Linked list
 - Circular queue
 
+- Binary Search Tree
+
 ## Algos
 
 ## Javascript
@@ -188,6 +209,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   - forEach
   - map
   - shift
+
+  It removes the first item and returns that first item. It mutates the array
   - unshift
   - slice
 
