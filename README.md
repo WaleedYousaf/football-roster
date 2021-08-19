@@ -123,6 +123,55 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Redux persist/localstorage
 - Mutable/Immutable
 
+## Data Structures
+- Stack
+
+  It follows the LIFO. In js, array can be used cuz it supports stack
+  functions like 
+    
+    - push() -> adds one item at the top
+    - pop() -> removes the top value and returns the removed item
+    - peek() -> returns the last element but doesnt remove it
+    - size() -> shows the length of stack/array
+
+    Palindrome number is if spelled backward, it remains the same
+
+        let myStack = [];
+        let word = "racecar";
+        let reversed = "";
+
+        // pushing letters in stack
+        for (i = 0; i < word.length; i++) {
+          myStack.push(word[i]);
+        }
+
+        // popping the letters back in a reversed string
+        for (i = 0; i < myStack.length; i++) {
+          reversed += myStack.pop();
+        }
+- Queue
+- Set
+
+   Its kind of an array except no duplicate items and the values
+   are not in any particular order. Basic set method provided by ES6
+   doesnt include all the methods of set, we may need to implement
+   part of it ourself if needed. The methods are
+
+   - has -> returns true false if element is present in set
+   - values -> return the collection/array
+   - add -> only adds if element isnt already added - uses `has` to check - returns true and false if added
+   - remove -> checks if collection has that element and then using its index, removes it by splicing the collection like `coll.splice(indexOfItemToRemove, 1);` and returns true false
+   - size -> returns length of collection. For ES6 set, size is not a method but a property so no need to do `mySet.size()` just use `mySet.size`
+   - union -> returns union of 2 sets. No duplicate entries
+   - intersection -> returns intersection i.e. only common entries
+   - difference -> subtracts entries from 1st collection which are in second
+   - subset -> if the first set is completly contained within another set. Uses `every` 
+
+- Linked list
+- Circular queue
+
+## Algos
+
 ## Javascript
 - Classes
 - Functions
@@ -140,7 +189,36 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   - map
   - shift
   - unshift
+  - slice
+
+    The slice() method returns a shallow copy of a portion of an 
+    array into a new array object selected from start to end (end not 
+    included) where start and end represent the index of items in 
+    that array. The original array will not be modified. The params are
+
+    `slice(start, end)`
+
+    where start (not required) is index at which to start extraction and if its undefined, start is 0th index. End (not required) used to extract upto but not including that index.
+
+    A negative index can be used, indicating an offset from the end of the sequence. slice(2,-1) extracts the third element through the second-to-last element in the sequence.
+
+    If end is omitted, slice extracts through the end of the sequence (arr.length)
+
+    Returns a new array containing the extracted elements.
+
   - splice
+
+    Mutates the array by removing or replacing and/or adding the 
+    new elements. The params are 
+
+    `splice(start, deleteCount, item1, item2, itemN)`
+
+    where start is the index (required param) to start from, deleteCount (not required) is the number
+    of items to be deleted from that index (can be 0 or in minus) and 
+    item/item...(not required) are the items to be added after that start index. 
+    Slice returns the array of removed elements 
+
+      
   - reduce
     
     Takes 2 arguments, the first one is a callback method, which further takes
@@ -149,6 +227,34 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
     is the initial value of accumalator. It returns a single value
 
         const myReducedArray = myArray.reduce((total, item) => total + (item.num1 + item.num2), 0) 
+
+- Shallow/Deep Copies
+
+  In a shallow copy, a new object is created that has an exact copy 
+  of the values in the original object. If any of the fields of the 
+  object are references to other objects, just the reference 
+  addresses are copied i.e., only the memory address is copied.
+
+      var employeeDetailsOriginal = { name: 'Max', age: 25, profession: 'Software Engineer' };
+
+      var employeeDetailsDuplicate = employeeDetailsOriginal; //Shallow copy!
+
+      employeeDetailsDuplicate.name = 'NameChanged'; // Also changes name of employeeDetailsOriginal
+
+  A deep copy copies all fields, and makes copies of dynamically 
+  allocated memory pointed to by the fields. A deep copy occurs when 
+  an object is copied along with the objects to which it refers
+
+      var employeeDetailsDuplicate = { 
+        name: employeeDetailsOriginal.name,
+        age: employeeDetailsOriginal.age,
+        profession: employeeDetailsOriginal.profession
+      }; // Deep copy, now the original object's values' persists
+  
+  Better ways to copy objects deeply are
+
+      var objectIsNew = JSON.parse(JSON.stringify(objectIsOld));
+
 
 - Pure components
 - HOCs
