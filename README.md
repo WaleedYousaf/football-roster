@@ -6,7 +6,7 @@ A PES Auction ReactJS app focuses on the core concepts ReactJS and uses Google's
 
 ## Pre-requisites:
 
-- NodeJS (https://nodejs.org/en/)
+- [NodeJS](https://nodejs.org/en/)
 
 ## Stack (Tools and Technologies):
 
