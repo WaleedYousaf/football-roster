@@ -68,8 +68,33 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # Basic Concepts
 
-## React
-- Create react app
+React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
+
+#### Advantages:
+
+- Declarative
+- Effiecient
+  
+  Because uses `vDOM` to reduce re renders. Functional components `reduces bundle` size. `Pure components` allow less re render levereging `componentDidUpdate` and only checking the shallow references of states/props
+
+- Flexible
+- Immutable
+
+  Allows uni directional flow and immutability helps in reusing the components where changing the value of one doesnt affects other. Also a change in state triggers the re-render. Mutating the state/props then have side effects like comparison of prev/next props/states in lifecycle methods/hooks will reference to same objects. Using `concat` or `spread operator` helps avoiding mutation. 
+
+  Mutating a state doesnt triggers a re render. This is because when we mutate, the object reference will still be the same and didUpdate's comparison will fail and results in preventing the re render. 
+  
+  Also, mutation leads to updating all the references which is not required.
+
+
+#### Closure:
+#### Asyncsronus:
+#### Async await:
+#### Is react synchronous/asynchrous and single/multi threaded:
+#### Mutation:
+#### Why react is faster than others:
+
+### <b>Create react app</b>
   - ### <b>Installation:</b>
     Create a new directory for project, we'll name it `pes-app` and `cd` to it. Then execute:
 
@@ -83,23 +108,48 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
         npm start
 
-- Webpack
-- Babel
+### <b>Webpack</b>
 
-  Converts ES6 to browser understandable vanilla script
+  Webpack also uses/has babel and apart from this, it also helps us bundle all the CSS/SASS/Images etc to file which browser understands and browser downloads that file at the time of page load.
 
-- VDOM
-- Class based components
-- Functional components
-- States
-- Props
-- Lifecycle methods in classes
-- Lifecycle hooks in functional components
-- Child to parent props
+  Also, the webpack combines all the modules (imports/exports) as at the end of the day, browser needs one big js file.
+
+
+### <b>Babel</b>
+
+  Converts ES6 to browser understandable vanilla/ES5 javascript. Its a transpiler/compiler. 
+
+### <b>VDOM</b>
+### <b>Class based components</b>
+### <b>Functional components</b>
+### <b>States</b>
+### <b>Props</b>
+### <b>Lifecycle methods in classes</b>
+### <b>Lifecycle hooks in functional components</b>
+### <b>Fragments</b>
+
+  Lets us group multiple nodes w/o adding an extra node.
+
+### <b>Lifting up the state</b>
+
+  Shifting a components state to its parent so that other sibling components can also use it
+
+### <b>Pure components</b>
+  
+  It does a shallow comparison on state change and avoid extra re renders leverging `componentDidUpdate`. It compares values when looking at primitive types and references for objects.
+
+  However, two conditions should meet while working/creating a pure component:
+
+  - Component State/Props is an immutable object
+  - State/Props should not have a multi-level nested object
+
+  Also, all the children of pure components should also be pure. 
+
+### <b>Child to parent props</b>
 
   Use of callback methods passed as a prop to the children. When called in the child, returns control to the parent as a callback and can also get data in the params
 
-- Hooks
+### <b>Hooks</b>
   - useState
   - useEffect
   - useContext
@@ -111,16 +161,19 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   - useLayoutEffect
   - useDebugValue
 
-- Redux state management
+### <b>Redux state management</b>
   - Actions types
   - Actions
   - Reducers
 
-- React router
-- Protected routes
-- Service worker
-- Redux persist/localstorage
-- Mutable/Immutable
+### <b>React router</b>
+### <b>Protected routes</b>
+### <b>Service worker</b>
+### <b>Redux persist/localstorage</b>
+### <b>Mutable/Immutable</b>
+### <b>SSR</b>
 
-## Design Libraries
+  When the browser requests a page, the server loads React in the memory and fetches the data required to render the app. After that, the server sends generated HTML to the browser, which is immediately shown to the user.
+
+## <b>Design Libraries</b>
 - Material UI
