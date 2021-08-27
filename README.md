@@ -70,6 +70,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
 
+React is `synchronous` and `single threaded`
+
 #### Advantages:
 
 - Declarative
@@ -120,12 +122,18 @@ React is a declarative, efficient, and flexible JavaScript library for building 
   Converts ES6 to browser understandable vanilla/ES5 javascript. Its a transpiler/compiler. 
 
 ### <b>VDOM</b>
+### <b>vDOM vs DOM</b>
+  Why do DOM elements have keys? To help react find the reference and only update a specific part of the DOM
+  How DOM/vDOM is listenting for a change?
 ### <b>Class based components</b>
 ### <b>Functional components</b>
 ### <b>States</b>
 ### <b>Props</b>
 ### <b>Lifecycle methods in classes</b>
 ### <b>Lifecycle hooks in functional components</b>
+### <b>Custom Hooks</b>
+### <b>Diffing algorithm</b>
+### <b>Reconciliation algorithm</b>
 ### <b>Fragments</b>
 
   Lets us group multiple nodes w/o adding an extra node.
@@ -161,11 +169,12 @@ React is a declarative, efficient, and flexible JavaScript library for building 
   - useLayoutEffect
   - useDebugValue
 
-### <b>Redux state management</b>
+### <b>Redux (state management)</b>
   - Actions types
   - Actions
   - Reducers
 
+### <b>Context API (state management)</b>
 ### <b>React router</b>
 ### <b>Protected routes</b>
 ### <b>Service worker</b>
