@@ -75,6 +75,9 @@ React is `synchronous` and `single threaded`
 #### Advantages:
 
 - Declarative
+
+  We dont know how its happening. We just ask react to do it. 
+
 - Effiecient
   
   Because uses `vDOM` to reduce re renders. Functional components `reduces bundle` size. `Pure components` allow less re render levereging `componentDidUpdate` and only checking the shallow references of states/props
@@ -88,13 +91,11 @@ React is `synchronous` and `single threaded`
   
   Also, mutation leads to updating all the references which is not required.
 
+### Framework vs Library
 
-#### Closure:
-#### Asyncsronus:
-#### Async await:
-#### Is react synchronous/asynchrous and single/multi threaded:
-#### Mutation:
-#### Why react is faster than others:
+A library is like you `aleardy have the app`, you just need `some extra` components. You can view the catalog, select the one with needs and call and use it. We have the control. We are the `incharge of the flow and architecture`.
+
+A framework is like you have the `skeleton of the app`, you call that code and then the framework returns the components which it already have.
 
 ### <b>Create react app</b>
   - ### <b>Installation:</b>
@@ -122,9 +123,50 @@ React is `synchronous` and `single threaded`
   Converts ES6 to browser understandable vanilla/ES5 javascript. Its a transpiler/compiler. 
 
 ### <b>VDOM</b>
+
+It is a copy of DOM kept in memory and synched with real DOM by libraries like `ReactDOM`. This is called `reconciliation`.
+
+Virtual DOM has the `same properties that of the Real DOM`, but it `lacks` the power to directly `change` the `content` of the screen.
+
+Change detection is the mechanism designed to track changes in an application state and render the updated state on the screen. It ensures that the user interface always stays in sync with the internal state of the program.
+
+Render function is called during each change detection cycle. Change detection is `manually triggered` in react and it triggers after every `setState`.
+
 ### <b>vDOM vs DOM</b>
+
+  `Repainting the DOM` each time  when a change occures is not feasible and is `very slow`.
+
   Why do DOM elements have keys? To help react find the reference and only update a specific part of the DOM
   How DOM/vDOM is listenting for a change?
+
+  Each time something in the DOM changes. Since DOM is represented as a tree structure, changes to the DOM is pretty quick but the changed element, and it’s children’s has to go through Reflow/Layout stage and then the changes has to be Re-painted which are slow. Therefore more the items to reflow/repaint, more slow your app becomes.
+
+  Whenever a change is made (like in the state), the component/element is marked as dirty.
+
+  `Rendering the Component` — Updating the Virtual-DOM, running the diffing algorithm and updating the actual DOM
+
+### <b>Reconciliation algorithm</b>
+
+The whole process to update the DOM is called reconciliation. `Creates the vDOM`, on update, `compares with the previous snapshot` and uses `diffing` algo to `mark as dirty` and then `only updates the dirty` nodes in the real DOM using unique `keys`
+
+A copy of DOM kept in memory and synched with real DOM by libraries like `ReactDOM`. This is called `reconciliation`.
+
+It is where react:
+
+Compares the previous internal instance with the next internal instance.
+
+Updates the internal Instance which is a Component Tree structure in JavaScript Object(Virtual DOM).
+
+And updates the actual DOM only at the node where there is an actual change along with it’s children.
+
+### <b>Diffing algorithm</b>
+
+With the help of the `comparison of previous snapshot of vDOM and current vDOM`, React figures out which components in the UI needs to be updated. This process is called diffing. 
+
+React `marks` elements `dirty` and updates only them.
+
+Imagine if we need to add 1 element at the top, now when react vDOM comparisons happen, it will re right all the next items as the position of all is changed. To get around this problem, `unique keys` are used which help updating only those items by comparing the keys of the previous children and only adding/updating the new ones.
+
 ### <b>Class based components</b>
 ### <b>Functional components</b>
 ### <b>States</b>
@@ -132,8 +174,27 @@ React is `synchronous` and `single threaded`
 ### <b>Lifecycle methods in classes</b>
 ### <b>Lifecycle hooks in functional components</b>
 ### <b>Custom Hooks</b>
-### <b>Diffing algorithm</b>
-### <b>Reconciliation algorithm</b>
+### <b>Connect</b>
+
+### <b>Hooks</b>
+  - useState
+  - useEffect
+  - useContext
+  - useRef
+  - useCallback
+  - useReducer
+  - useMemo
+  - useImperativeHandle
+  - useLayoutEffect
+  - useDebugValue
+
+### <b>Custom Hooks</b>
+### <b>Context API (state management)</b>
+### <b>React router</b>
+### <b>Protected routes</b>
+### <b>Service worker</b>
+### <b>Redux persist/localstorage</b>
+
 ### <b>Fragments</b>
 
   Lets us group multiple nodes w/o adding an extra node.
@@ -157,29 +218,11 @@ React is `synchronous` and `single threaded`
 
   Use of callback methods passed as a prop to the children. When called in the child, returns control to the parent as a callback and can also get data in the params
 
-### <b>Hooks</b>
-  - useState
-  - useEffect
-  - useContext
-  - useRef
-  - useCallback
-  - useReducer
-  - useMemo
-  - useImperativeHandle
-  - useLayoutEffect
-  - useDebugValue
-
 ### <b>Redux (state management)</b>
   - Actions types
   - Actions
   - Reducers
 
-### <b>Context API (state management)</b>
-### <b>React router</b>
-### <b>Protected routes</b>
-### <b>Service worker</b>
-### <b>Redux persist/localstorage</b>
-### <b>Mutable/Immutable</b>
 ### <b>SSR</b>
 
   When the browser requests a page, the server loads React in the memory and fetches the data required to render the app. After that, the server sends generated HTML to the browser, which is immediately shown to the user.
