@@ -194,6 +194,9 @@ Imagine if we need to add 1 element at the top, now when react vDOM comparisons 
 ### <b>Protected routes</b>
 ### <b>Service worker</b>
 ### <b>Redux persist/localstorage</b>
+### <b>Redux Thunk</b>
+
+A package by redux. A standard way to define `async action creators`. Its a middleware applied to the store. It gives the ability to an action creator i.e. the api in this case, to `return a function`(anonymous, doesnt have to be pure so it is allowed to have side effects such as async api calls) instead of an action object. These functions take `dispatch` and `getState` as args and can dispatch actions. 
 
 ### <b>Fragments</b>
 
