@@ -173,10 +173,8 @@ Imagine if we need to add 1 element at the top, now when react vDOM comparisons 
 ### <b>Props</b>
 ### <b>Lifecycle methods in classes</b>
 ### <b>Lifecycle hooks in functional components</b>
-### <b>Custom Hooks</b>
-### <b>Connect</b>
 
-### <b>Hooks</b>
+### <b>Hooks</b> **-**
   - useState
   - useEffect
   - useContext
@@ -188,11 +186,12 @@ Imagine if we need to add 1 element at the top, now when react vDOM comparisons 
   - useLayoutEffect
   - useDebugValue
 
-### <b>Custom Hooks</b>
-### <b>Context API (state management)</b>
-### <b>React router</b>
+### <b>Custom Hooks</b> **-**
+### <b>Connect</b> **-**
+### <b>Context API (state management)</b> **-**
+### <b>React router</b> **-**
+### <b>Service worker</b> **-**
 ### <b>Protected routes</b>
-### <b>Service worker</b>
 ### <b>Redux persist/localstorage</b>
 ### <b>Redux Thunk</b>
 
